@@ -1,0 +1,23 @@
+<h1><%= @champion.name %></h1>
+<p>Title: <%= @champion.title %></p>
+<%= image_tag "/img/champion/#{@champion.icon}", alt: "#{@champion.name} icon" %>
+
+<h2>Spells:</h2>
+<ul>
+  <% @champion.spells.each do |spell| %>
+    <li>
+      <%= image_tag "/img/spell/#{spell.icon}", alt: "#{spell.name} icon" %>
+      <strong><%= spell.name %>:</strong> <%= spell.description %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Recommended Items:</h2>
+<ul>
+  <% @champion.items.each do |item| %>
+    <li>
+      <%= link_to item.name, item_path(item) %>
+      <%= image_tag "/img/item/#{item.icon}", alt: "#{item.name} icon" %>
+    </li>
+  <% end %>
+</ul>

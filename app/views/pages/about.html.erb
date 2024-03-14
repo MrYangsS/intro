@@ -1,0 +1,31 @@
+<h1>About Us</h1>
+<p>For the project, I will use League of Legends DataDragon data, including "championfull.json" for champions and "item.json" for items, plus champion, spell and item images.</p>
+
+<h2>Champion Data:</h2>
+<p>"championfull.json" has info like champion names, spell, and stats. Each champion has an ID, name, spells, and an image.</p>
+
+<h2>Item Data:</h2>
+<p>"item.json" includes item details like name, cost, and effect. Each item has an ID, name, and an image.</p>
+
+<h2>Database Tables:</h2>
+<ul>
+  <li><strong>Champions:</strong> Stores champion data with columns like "ChampionID", "Name", and "Icon".</li>
+  <li><strong>Spells:</strong> Connected to "Champions" with columns like "SpellID", "ChampionID", and "Name".</li>
+  <li><strong>Items:</strong> Holds item details with columns like "ItemID", "Name", and "Icon".</li>
+  <li><strong>ChampionItems:</strong> Links champions to items, showing which items are good for which champions.</li>
+</ul>
+
+<h2>Data Integration:</h2>
+<p>Champions are linked to their spells and recommended items. The database will help show all info about champions and items on the website, making it easy for users to learn about different champions and their items.</p>
+
+
+<h2>Data Sources</h2>
+<ul>
+  <li>Source 1: from League of Legends DataDragon - league of legends dragontail-14.5.1/14.5.1/data/en_US/championFull.json</li>
+  <li>Source 1: from League of Legends DataDragon - league of legends dragontail-14.5.1/14.5.1/data/en_US/item.json</li>
+  <li>Source 2: from League of Legends DataDragon - league of legends dragontail-14.5.1/14.5.1/img</li>
+</ul>
+
+
+<h2>Entity Relationship Diagram (ERD)</h2>
+<img src="img/erd.png" alt="ERD Diagram">

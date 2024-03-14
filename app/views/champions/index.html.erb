@@ -1,0 +1,35 @@
+<div class="container-fluid mt-3">
+  <h1>All Champions</h1>
+
+  <%= form_with(url: champions_path, method: :get, local: true, class: "row g-3 mb-4") do |form| %>
+    <div class="col-md-5">
+      <%= form.text_field :search, placeholder: "Search Champions", class: "form-control" %>
+    </div>
+
+    <div class="col-md-5">
+      <%= form.label :category, "Search In", class: "visually-hidden" %>
+      <%= form.select :category, options_for_select([['Name', 'name'], ['Skills', 'skills'], ['Items', 'items']]), {}, { class: "form-select" } %>
+    </div>
+
+    <div class="col-md-2">
+      <%= form.submit "Search", class: "btn btn-primary w-100" %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <% @champions.each do |champion| %>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 mb-4">
+        <div class="card h-100">
+          <% if champion.icon.present? %>
+            <%= image_tag "/img/champion/#{champion.icon}", class: "card-img-top", alt: "#{champion.name} icon" %>
+          <% end %>
+          <div class="card-body d-flex flex-column">
+            <%= link_to champion.name, champion_path(champion), class: "card-link mt-auto" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= paginate @champions, class: "pagination justify-content-center mt-4" %>
+</div>

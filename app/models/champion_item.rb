@@ -1,0 +1,2 @@
+class ChampionItem < ApplicationRecord
+end
